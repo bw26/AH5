@@ -14,7 +14,7 @@ class Solution {
         }
         else{ 
           //add new entry
-          h_map.put(s.charAt(i), 0);
+          h_map.put(s.charAt(i), 1);
           char_first_index.put(s.charAt(i), i);
         }
         //check if frequency is higher or if tie
