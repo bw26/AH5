@@ -2,7 +2,6 @@ import java.util.HashMap;
 
 class Solution {
   public static char mostFrequentChar(String s) {
-      int largest_count =0;
       char most_freq = s.charAt(0);
       //Hash map for frequency and index
       HashMap<Character, Integer> h_map = new HashMap<Character, Integer>();
@@ -19,9 +18,8 @@ class Solution {
           char_first_index.put(s.charAt(i), i);
         }
         //check if frequency is higher or if tie
-        if(h_map.get(s.charAt(i))>largest_count||(h_map.get(s.charAt(i))==largest_count && char_first_index.get(s.charAt(i))<char_first_index.get(most_freq))){
+        if(h_map.get(s.charAt(i))>h_map.get(most_freq)||(h_map.get(s.charAt(i))==h_map.get(most_freq) && char_first_index.get(s.charAt(i))<char_first_index.get(most_freq))){
           most_freq = s.charAt(i);
-          largest_count = h_map.get(s.charAt(i));
         }
       }
       return most_freq;
